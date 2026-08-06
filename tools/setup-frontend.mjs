@@ -31,7 +31,7 @@ if (existingFramework) {
   process.exit(existingFramework === framework ? 0 : 1);
 }
 
-const npm = process.platform === "win32" ? "npm.cmd" : "npm";
+const npm = "npm";
 const dependencies =
   framework === "vue"
     ? ["vue@3.5.40", "vue-router@5.2.0"]
@@ -136,7 +136,11 @@ console.log(
 );
 
 function runNpm(args) {
-  execFileSync(npm, args, { cwd: rootDir, stdio: "inherit" });
+  execFileSync(npm, args, {
+    cwd: rootDir,
+    stdio: "inherit",
+    shell: true,
+  });
 }
 
 function printUsage() {
