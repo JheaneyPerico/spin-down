@@ -117,22 +117,3 @@ The leaderboard detail page provides information about the selected leaderboard,
 The application is designed to work on both desktop and mobile screen sizes.
 
 The leaderboard cards automatically adjust their layout based on the available screen width.
-
-## Project Structure
-
-```text
-project/
-├── public/
-├── src/
-│   ├── api/
-│   ├── components/
-│   ├── views/
-│   ├── App.tsx
-│   ├── router.tsx
-│   └── main.tsx
-├── tools/
-│   └── setup-frontend.mjs
-├── package.json
-├── README.md
-└── vite.config.ts
-```
