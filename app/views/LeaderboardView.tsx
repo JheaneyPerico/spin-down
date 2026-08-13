@@ -210,7 +210,7 @@ export default function LeaderboardView() {
                     {player.rank}
                   </td>
 
-                  <td className="border border-[#24558a] p-4 font-medium">
+                  <td className="border border-[#24558a] p-4 text-center font-medium">
                     {player.playerName}
                   </td>
 
