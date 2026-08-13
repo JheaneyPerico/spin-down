@@ -1,110 +1,138 @@
-# Spin Down Starter
+# Spin Down Leaderboards
 
-This starter uses [Vite](https://vite.dev/) and [Nitro v3](https://nitro.build/) to support the Spin Down leaderboard challenge. It requires Node.js 24.16 or newer.
+Spin Down Leaderboards is a web application for browsing, searching, and viewing competitive leaderboards.
 
-### A coding challenge from the World Beyblade Organization
+Users can browse available leaderboards, search for specific leaderboards, and open a leaderboard detail page to view its description, formats, banner image, and player rankings.
 
-## The Challenge
+## Features
 
-Build the user-facing side of a leaderboard viewing experience as a web application. Six leaderboards are included in [`challenge-data/leaderboards.json`](challenge-data/leaderboards.json), along with their tournaments and players in the other files in that directory.
+* Browse available leaderboards
+* Search for leaderboards
+* Click a leaderboard card to view its details
+* View leaderboard descriptions
+* View supported leaderboard formats
+* View leaderboard banner images
+* View player rankings
+* Responsive layout for desktop and mobile devices
 
-A user should be able to search for leaderboards and view individual leaderboard stats. That is the core experience. How you structure the product and how far you take it is up to you.
+## Technologies
 
-## Core Requirements
+* React
+* TypeScript
+* React Router
+* Tailwind CSS
+* Vite
+* npm
 
-- Browse and search the leaderboards
-- Show a leaderboard detail view with its description, formats, player rankings, and banner image
-- Provide a usable experience on desktop and mobile
-- Include clear instructions in your README for running the project locally
+## Requirements
 
-## Getting Started
+Before running the project, make sure you have the following installed:
 
-Install the base dependencies, then choose Vue or React for the frontend:
+* Node.js 24.16.0 or newer
+* npm
+
+You can check your installed versions with:
+
+```bash
+node --version
+npm --version
+```
+
+## Running the Project Locally
+
+### 1. Clone the repository
+
+Clone the GitHub repository:
+
+```bash
+git clone <YOUR-GITHUB-REPOSITORY-URL>
+```
+
+### 2. Enter the project directory
+
+```bash
+cd <YOUR-PROJECT-FOLDER>
+```
+
+Replace `<YOUR-PROJECT-FOLDER>` with the name of the cloned repository.
+
+### 3. Install dependencies
+
+Install all required project dependencies:
 
 ```bash
 npm install
-npm run setup:frontend -- vue
 ```
 
-Replace `vue` with `react` to use React. The setup command installs the selected framework, its router, and Tailwind CSS; configures Vite and TypeScript; and creates minimal `/` and `/leaderboards/:slug` routes. Run it once, before editing the frontend.
+### 4. Set up the React frontend
 
-Start the development server:
+Run the frontend setup command:
+
+```bash
+npm run setup:frontend -- react
+```
+
+### 5. Start the development server
+
+Start the Vite development server:
 
 ```bash
 npm run dev
 ```
 
-The generated project provides `npm run typecheck`, `npm run format`, and `npm run format:check`. `npm run build` runs the typecheck before creating the production build.
+Vite will display a local URL in the terminal. The application is usually available at:
 
-## Data API
+```text
+http://localhost:5173
+```
 
-The starter exposes the challenge data through read-only endpoints:
+Open the URL in a web browser to use the application.
 
-| Endpoint                             | Description                                                           |
-| ------------------------------------ | --------------------------------------------------------------------- |
-| `GET /api/leaderboards`              | All leaderboards, including player and tournament counts              |
-| `GET /api/leaderboards?search=burst` | Search titles, descriptions, leagues, and formats                     |
-| `GET /api/leaderboards/:slug`        | One leaderboard with enriched player rankings and related tournaments |
+## Using the Application
 
-Use the unique `slug` returned by the collection endpoint for detail requests. Detail rankings include the supplied stats plus each player's avatar and country. Unknown slugs return `404`.
+### Browse Leaderboards
 
-The API reduces setup and data-joining work. The JSON files in [`challenge-data/`](challenge-data/) remain available for direct imports.
+The home page displays the available leaderboards as clickable cards.
 
-## Assumptions You Can Make
+Click anywhere on a leaderboard card to open its detail page.
 
-- This is a prototype, not a production launch.
-- Please spend no more than 3-4 hours. We do not expect a whole leaderboard platform.
-- You may use the provided Vue or React setup, or choose another stack.
-- You may use AI tools and coding assistants. Be ready to explain how you used them, the decisions you made, and what you would refine.
-- Authentication and user accounts are not required.
-- A frontend-only implementation that imports the JSON directly is acceptable.
-- Make reasonable product decisions, document your assumptions, and optimize for clarity over surface area.
+### Search Leaderboards
 
-## Minimum Bar
+Use the search box to search for a specific leaderboard.
 
-- Leaderboard browsing and search
-- A clear leaderboard detail experience
-- A usable experience on desktop and mobile
-- A repository we can clone and run by following its README
+Enter a search term and click the **Search** button to display matching leaderboards.
 
-## Stretch Ideas
+### View Leaderboard Details
 
-These are optional. Only do them if the basics are solid. We care more about judgment than any specific extra feature. If you go beyond the basics, focus on making leaderboard or player stats clearer rather than adding unrelated surface area.
+The leaderboard detail page provides information about the selected leaderboard, including:
 
-## The Data
+* Leaderboard title
+* Description
+* Formats
+* Banner image
+* Player rankings
 
-The synthetic dataset was generated with [`tools/generate-leaderboard-challenge-data.mjs`](tools/generate-leaderboard-challenge-data.mjs) and includes:
+## Responsive Design
 
-- [`leaderboards.json`](challenge-data/leaderboards.json): 6 leaderboard definitions
-- [`players.json`](challenge-data/players.json): 100 player profiles
-- [`tournaments.json`](challenge-data/tournaments.json): 30 tournament records
-- [`leaderboardPlayers.json`](challenge-data/leaderboardPlayers.json): 300 ranked leaderboard entries
-- [`leaderboardTournaments.json`](challenge-data/leaderboardTournaments.json): 24 leaderboard-to-tournament relationships
+The application is designed to work on both desktop and mobile screen sizes.
 
-Generated avatars and banners are self-contained SVG data URLs, so the interface does not depend on an external image service. The generator validates references, ranking order, dates, locations, and tournament compatibility before writing data.
+The leaderboard cards automatically adjust their layout based on the available screen width.
 
-## What to Submit
+## Project Structure
 
-1. Fork this repository to your own GitHub account.
-2. Complete the challenge in your fork.
-3. Include a README with setup instructions, notable decisions, and deliberate scope cuts.
-4. Share the repository link with us.
-
-The [`SUBMISSION.md`](SUBMISSION.md) template is available as a starting point. You have five days from receiving the challenge to submit it.
-
-## How We Evaluate
-
-| Area              | What we are looking at                                                 |
-| ----------------- | ---------------------------------------------------------------------- |
-| Product thinking  | Does the experience make sense, and were the right things prioritized? |
-| Craft             | Does the design and interaction feel intentional?                      |
-| Technical quality | Is the code clean, well structured, and easy to follow?                |
-| Judgment          | Was the work scoped appropriately for the timebox?                     |
-| Workflow          | Can you explain how you built it and why?                              |
-
-## Build and Preview
-
-```bash
-npm run build
-npm run preview
+```text
+project/
+├── public/
+├── src/
+│   ├── api/
+│   ├── components/
+│   ├── views/
+│   ├── App.tsx
+│   ├── router.tsx
+│   └── main.tsx
+├── tools/
+│   └── setup-frontend.mjs
+├── package.json
+├── README.md
+└── vite.config.ts
 ```
