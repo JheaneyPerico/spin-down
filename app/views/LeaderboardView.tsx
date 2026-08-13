@@ -190,7 +190,7 @@ export default function LeaderboardView() {
                   Rank
                 </th>
 
-                <th className="border border-[#24558a] p-4 text-left">
+                <th className="border border-[#24558a] p-4 text-center">
                   Player
                 </th>
 
