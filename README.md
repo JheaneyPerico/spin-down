@@ -10,7 +10,7 @@ Users can browse available leaderboards, search for specific leaderboards, and o
 * Search for leaderboards
 * Click a leaderboard card to view its details
 * View leaderboard descriptions
-* View supported leaderboard formats
+* View leaderboard formats
 * View leaderboard banner images
 * View player rankings
 * Responsive layout for desktop and mobile devices
