@@ -66,13 +66,6 @@ Vite will display a local URL in the terminal. The application is usually availa
 http://localhost:3000
 ```
 
-Open the URL in a web browser to use the application.
-Spin Down Leaderboards
-How to Run
-npm install
-npm run dev
-
-
 Open the local URL provided by Vite.
 
 
