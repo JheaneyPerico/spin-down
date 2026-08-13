@@ -1,5 +1,5 @@
 import { defineHandler, HTTPError } from "nitro";
-import { getLeaderboardDetail } from "~/server/utils/challenge-data.ts";
+import { getLeaderboardDetail } from "~/server/utils/challenge-data";
 
 export default defineHandler((event) => {
   const slug = event.context.params?.slug;

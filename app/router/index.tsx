@@ -1,10 +1,23 @@
-import { createBrowserRouter } from "react-router";
-import HomeView from "../views/HomeView.tsx";
-import LeaderboardView from "../views/LeaderboardView.tsx";
+import { createBrowserRouter } from "react-router-dom";
+
+import HomeView from "../views/HomeView";
+import LeaderboardView from "../views/LeaderboardView";
+
 
 const router = createBrowserRouter([
-  { path: "/", Component: HomeView },
-  { path: "/leaderboards/:slug", Component: LeaderboardView },
+
+  {
+    path: "/",
+    element: <HomeView />
+  },
+
+
+  {
+    path: "/leaderboards/:slug",
+    element: <LeaderboardView />
+  }
+
 ]);
+
 
 export default router;
