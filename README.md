@@ -4,26 +4,6 @@ Spin Down Leaderboards is a web application for browsing, searching, and viewing
 
 Users can browse available leaderboards, search for specific leaderboards, and open a leaderboard detail page to view its description, formats, banner image, and player rankings.
 
-## Features
-
-* Browse available leaderboards
-* Search for leaderboards
-* Click a leaderboard card to view its details
-* View leaderboard descriptions
-* View leaderboard formats
-* View leaderboard banner images
-* View player rankings
-* Responsive layout for desktop and mobile devices
-
-## Technologies
-
-* React
-* TypeScript
-* React Router
-* Tailwind CSS
-* Vite
-* npm
-
 ## Requirements
 
 Before running the project, make sure you have the following installed:
@@ -83,37 +63,63 @@ npm run dev
 Vite will display a local URL in the terminal. The application is usually available at:
 
 ```text
-http://localhost:5173
+http://localhost:3000
 ```
 
 Open the URL in a web browser to use the application.
+Spin Down Leaderboards
+How to Run
+npm install
+npm run dev
 
-## Using the Application
 
-### Browse Leaderboards
+Open the local URL provided by Vite.
 
-The home page displays the available leaderboards as clickable cards.
 
-Click anywhere on a leaderboard card to open its detail page.
+## Time Spent
+Approximately 3–4 hours. I focused on the core leaderboard experience, including search, leaderboard details, rankings, and responsive UI.
 
-### Search Leaderboards
+## Assumptions and Scope
+- The existing API provides the required leaderboard data.
+- Search is handled through the API.
+- Leaderboards are accessed using their slug.
+- Authentication and leaderboard management are outside the scope.
+- Pagination was not implemented due to the time limit.
 
-Use the search box to search for a specific leaderboard.
+## Stack
+- Frontend: React, TypeScript, React Router, Tailwind CSS
+- Backend: Existing API
+- Database: Existing backend/database
 
-Enter a search term and click the **Search** button to display matching leaderboards.
+## What I Built
+A responsive leaderboard application where users can:
+- Search leaderboards
+- View leaderboard details
+- View formats, league, and scoring information
+- View player rankings and Elo ratings
+- Navigate between leaderboard pages
 
-### View Leaderboard Details
+Loading, empty, and error states are also included.
 
-The leaderboard detail page provides information about the selected leaderboard, including:
+## Notable Decisions
+- Used API-based search rather than client-side filtering, with search terms passed to the backend API
+- Used React state instead of adding a global state library.
+- Used Tailwind CSS for simple, consistent styling.
+- Added responsive layouts for different screen sizes.
 
-* Leaderboard title
-* Description
-* Formats
-* Banner image
-* Player rankings
+## Testing
+Manually tested:
+- Search
+- Enter-key search
+- Leaderboard navigation
+- Ranking display
+- Responsive layout
 
-## Responsive Design
+No automated tests were added within the time box.
 
-The application is designed to work on both desktop and mobile screen sizes.
-
-The leaderboard cards automatically adjust their layout based on the available screen width.
+## What I'd Do With More Time
+- Add pagination for large leaderboards
+- Add automated tests
+- Improve loading and error states
+- Add ranking filters and sorting
+- Further improve accessibility and mobile UX
