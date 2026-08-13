@@ -88,7 +88,7 @@ export default function LeaderboardView() {
           <img
             src={board.bannerImageUrl}
             alt={board.title}
-            className="h-56 w-full object-cover"
+            className="block h-auto w-full"
           />
         </div>
       )}
